@@ -1,0 +1,116 @@
+<!DOCTYPE html><html lang="ko"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>RESTful과 REST API | Delf's blog</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/8.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">RESTful과 REST API</h1><a id="logo" href="/.">Delf's blog</a><p class="description"></p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 홈</i></a><a href="/archives/"><i class="fa fa-archive"> 아카이브</i></a><a href="/about/"><i class="fa fa-user"> 소개</i></a><a href="/atom.xml"><i class="fa fa-rss"> RSS</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">RESTful과 REST API</h1><div class="post-meta">Oct 9, 2018<span> | </span><span class="category"><a href="/categories/Study/">Study</a></span></div><div class="post-content"><p><img src="/post_resources/2018-10-09/title.png" alt=""></p>
+<h3 id="말하고-싶은-것"><a href="#말하고-싶은-것" class="headerlink" title="말하고 싶은 것"></a>말하고 싶은 것</h3><ul>
+<li>REST란 무엇인가?</li>
+<li>RESTful하다는 것은 무엇을 의미하며, 어떻게 해야하는가?</li>
+</ul>
+<h1 id="REST"><a href="#REST" class="headerlink" title="REST"></a>REST</h1><blockquote>
+<p><strong>REST</strong>는  <strong>RE</strong>presentation <strong>S</strong>tate <strong>T</strong>ransfer의 약자로, WWW(World Wide Web) 같은 분산 하이퍼미디어 시스템에서 운영되는 <em>소프트웨어 아키텍처 스타일</em>입니다.</p>
+</blockquote>
+<p>로이 필딩(Roy Fielding)은 HTTP의 주요 저자 중 한 사람으로 그 당시 웹(HTTP) 설계의 우수성에 비해 제대로 사용되어지지 못하는 모습에 안타까했고, 2000년에 그의 박사학위 논문에서 웹의 장점을 최대한 활용할 수 있는 아키텍처로써 REST를 발표했습니다.</p>
+<p>REST는 HTTP/1.1 스펙과 동시에 만들어졌는데, HTTP 프로토콜을 정확히 의도에 맞게 활용하여 디자인하게 유도하고 있기 때문에 <strong>디자인 기준이 명확</strong>해지며, <strong>의미적인 범용성</strong>을 지니므로 중간 계층의 컴포넌트들이 서비스를 최적화하는 데 도움이 됩니다. </p>
+<p>REST의 <strong>기본 원칙</strong>을 성실히 지킨 서비스 디자인은 <em>“RESTful 하다”</em> 라고 흔히 표현합니다.</p>
+<h2 id="REST의-6가지-원칙-제약-사항"><a href="#REST의-6가지-원칙-제약-사항" class="headerlink" title="REST의 6가지 원칙(제약 사항)"></a>REST의 6가지 원칙(제약 사항)</h2><h3 id="1-Uniform-Interface"><a href="#1-Uniform-Interface" class="headerlink" title="1. Uniform Interface"></a>1. <strong>Uniform Interface</strong></h3><p>Uniform Interface는 URI로 지정한 리소스에 대한 조작을 <em>통일되고 한정적인 인터페이스</em>로 수행하는 아키텍처 스타일을 말합니다.</p>
+<p>REST의 또 다른 큰 특징 중 하나는 REST API 메시지만 보고도 이를 쉽게 이해 할 수 있는 자체 표현 구조(Self-descriptiveness)로 되어 있다는 것입니다.</p>
+<h3 id="2-Stateless"><a href="#2-Stateless" class="headerlink" title="2. Stateless"></a>2. <strong>Stateless</strong></h3><p>REST는 무상태성 성격을 갖습니다. 다시 말해 작업을 위한 상태정보를 따로 저장하고 관리하지 않습니다. 세션 정보나 쿠키정보를 별도로 저장하고 관리하지 않기 때문에 API 서버는 들어오는 요청만을 단순히 처리하면 됩니다.</p>
+<p>때문에 서비스의 자유도가 높아지고 서버에서 불필요한 정보를 관리하지 않음으로써 구현이 단순해집니다.</p>
+<h3 id="3-Cacheable"><a href="#3-Cacheable" class="headerlink" title="3. Cacheable"></a>3. <strong>Cacheable</strong></h3><p>REST의 가장 큰 특징 중 하나는 HTTP라는 기존 웹표준을 그대로 사용하기 때문에, <em>웹에서 사용하는 기존 인프라를 그대로 활용이 가능</em>합니다. 따라서 HTTP가 가진 캐싱 기능이 적용 가능합니다. HTTP 프로토콜 표준에서 사용하는 Last-Modified태그나 E-Tag를 이용하면 캐싱 구현이 가능합니다.</p>
+<h3 id="4-Client-Server-구조"><a href="#4-Client-Server-구조" class="headerlink" title="4. Client - Server 구조"></a>4. <strong>Client - Server 구조</strong></h3><p>REST 서버는 API 제공, 클라이언트는 사용자 인증이나 컨텍스트(세션, 로그인 정보)등을 직접 관리하는 구조로 각각의 역할이 확실히 구분되기 때문에 클라이언트와 서버에서 개발해야 할 내용이 명확해지고 서로간 의존성이 줄어들게 됩니다.</p>
+<h3 id="5-Hierarchical-System-Layered-System"><a href="#5-Hierarchical-System-Layered-System" class="headerlink" title="5. Hierarchical System(Layered System)"></a>5. <strong>Hierarchical System(Layered System)</strong></h3><p>REST 서버는 다중 계층으로 구성될 수 있으며 보안, 로드 밸런싱, 암호화 계층을 추가해 구조상의 유연성을 둘 수 있고 PROXY, 게이트웨이 같은 네트워크 기반의 중간매체를 사용할 수 있게 합니다.</p>
+<h3 id="6-Code-on-Demend-optional"><a href="#6-Code-on-Demend-optional" class="headerlink" title="6. Code-on-Demend(optional)"></a>6. <strong>Code-on-Demend</strong>(optional)</h3><p>서버가 네트워크를 통해 클라이언트에 프로그램을 전달하면 그 프로그램이 클라이언트에서 실행될 수 있어야합니다. (Java applet이나 Javascript 같은 것을 말함) 다만 이 제약조건은 필수는 아닙니다.</p>
+<h1 id="REST-API"><a href="#REST-API" class="headerlink" title="REST API"></a>REST API</h1><p>위 REST의 원칙에 따라 디자인한 API를 REST API라고 합니다. </p>
+<h2 id="REST-API의-구성"><a href="#REST-API의-구성" class="headerlink" title="REST API의 구성"></a>REST API의 구성</h2><p>REST API는 자원(Resource), 행위(Verb), 표현(Representations)의 3가지 요소로 구성됩니다. REST는 자체 표현 구조(Self-descriptiveness)로 구성되어 REST API만으로 요청을 이해할 수 있습니다.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">구성 요소</th>
+<th style="text-align:left">내용</th>
+<th style="text-align:left">표현방법</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Resouce</td>
+<td style="text-align:left">자원</td>
+<td style="text-align:left">HTTP URI</td>
+</tr>
+<tr>
+<td style="text-align:left">Verb</td>
+<td style="text-align:left">자원에 대한 행위</td>
+<td style="text-align:left">HTTP method</td>
+</tr>
+<tr>
+<td style="text-align:left">Representations</td>
+<td style="text-align:left">자원에 대한 행위의 내용</td>
+<td style="text-align:left">HTTP Message Pay Load</td>
+</tr>
+</tbody>
+</table>
+<h2 id="REST-API-설계-시-주의할-점"><a href="#REST-API-설계-시-주의할-점" class="headerlink" title="REST API 설계 시, 주의할 점"></a>REST API 설계 시, 주의할 점</h2><h3 id="자원에-대한-행위는-HTTP-Method으로-표현한다"><a href="#자원에-대한-행위는-HTTP-Method으로-표현한다" class="headerlink" title="자원에 대한 행위는 HTTP Method으로 표현한다."></a>자원에 대한 행위는 HTTP Method으로 표현한다.</h3><p>URI는 정보의 <strong>자원</strong>을 표현해야 해야합니다. 또한 그 자원에 대한 행위는 HTTP Method(GET, PUT, POST, DELETE)로 표현합니다. 대부분의 행위는 HTTP Method만으로 표현이 가능하기 때문에, URI에 CRUD를 사용하지 않도록 합니다.</p>
+<p>예를들어 임의의 회원(사용자)에 대한 정보를 삭제하는 API를 작성할 때,<br> <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DELETE /members/delete/1</span><br></pre></td></tr></table></figure></p>
+<p>위와 같은 방식은 REST를 제대로 적용하지 않은 URI입니다. URI는 자원을 표현하는데 중점을 두어야 합니다. delete와 같은 <u>행위에 대한 표현</u>이 들어가서는 안됩니다.</p>
+<p>위에서 설명한 두 가지를 적용한다면, 다음과 같이 수정할 수 있습니다.<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DELETE /members/1</span><br></pre></td></tr></table></figure></p>
+<p>그 이외에는,</p>
+<ul>
+<li><p>회원정보 조회</p>
+  <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">GET /members/show/1     (Not RESTful)</span><br><span class="line">GET /members/1          (RESTful)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>회원 추가</p>
+  <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">POST /members/insert/2  (NOT RESTful)</span><br><span class="line">POST /members/2         (RESTful)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>위와 같이 작성할 수 있습니다.</p>
+<h4 id="HTTP-Method"><a href="#HTTP-Method" class="headerlink" title="HTTP Method"></a>HTTP Method</h4><p>자원은 크게 <code>Collection</code>과 <code>Element</code>로 나누어 표현할 수 있으며, 아래 테이블에 기초한다면 서버 대부분과의 통신 행태를 표현할 수 있습니다.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Collection URI, <br>ex) <code>/memeber/</code></th>
+<th>Element URI, <br>ex) <code>/member/:id</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GET</td>
+<td>컬렉션에 속한 자원들의 URI나 <br>그 상세사항의 목록을 보여준다.</td>
+<td>요청한 컬렉션 내 자원을 반환한다.</td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>전체 컬렉션은 다른 컬렉션으로 교체한다.</td>
+<td>해당 자원을 수정한다.</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>해당 컬렉션에 속하는 새로운 자원을 생성한다.<br>자원의 URI는 시스템에 의해 할당된다.</td>
+<td>해당 자원에 귀속되는 새로운 자원을 생성한다.</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>전체 컬렉션을 삭제한다.</td>
+<td>해당 컬렉션내 자원을 삭제한다.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="Collection과-Document"><a href="#Collection과-Document" class="headerlink" title="Collection과 Document"></a>Collection과 Document</h4><p>Resouce는 Collection과 Document로 구분할 수 있습니다. Document는 Element라고도 표현하며, 하나의 Resouce 개체, 또는 문서를 말합니다. 그러한 Document의 집합을 Collection이라고 할 수 있습니다.</p>
+<p>예를들어,<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://delf.com/sport/soccer</span><br></pre></td></tr></table></figure></p>
+<p>다음 URI는  sports라는 Collection과 soccer라는 Document로 표현되고 있습니다. sports Collection에는 soccer이외에 baseball이나 basketball등이 포함될 수 있습니다.</p>
+<p>좀 더 예를 들어보자면,<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://delf.com/sports/soccer/players/13</span><br></pre></td></tr></table></figure></p>
+<p>sports, players 컬렉션과 soccer, 13(13번인 선수)를 의미하는 도큐먼트로 URI가 이루어지게 됩니다. 여기서 중요한 점은 컬렉션은 복수로 사용하고 있다는 점입니다. 좀 더 직관적인 REST API를 위해서는 컬렉션과 도큐먼트를 사용할 때 단수 복수도 지켜준다면 좀 더 이해하기 쉬운 URI를 설계할 수 있습니다.</p>
+<h3 id="소문자를-사용한다"><a href="#소문자를-사용한다" class="headerlink" title="소문자를 사용한다."></a>소문자를 사용한다.</h3><p>대문자를 사용해도 상관이 없지만, <u>대문자와 소문자가 구분된다</u>는 사실은 알고있어야 합니다. 다음 URI는 모두 다른 리소스 입니다.<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">http://delf.com/RESTfulAPI</span><br><span class="line">http://delf.com/RESTfulapi</span><br><span class="line">http://delf.com/restfulAPI</span><br></pre></td></tr></table></figure></p>
+<h3 id="공백과-언더바-보다는-하이픈-을-사용한다"><a href="#공백과-언더바-보다는-하이픈-을-사용한다" class="headerlink" title="공백과 언더바(_)보다는 하이픈(-)을 사용한다."></a>공백과 언더바(_)보다는 하이픈(-)을 사용한다.</h3><p>언더바(_)를 사용하면 밑줄에 겹쳐서 보이지 않게 되거나 공백을 사용하면 <code>%20</code>과 같이 인코딩되어 가독성이 떨어지게 됩니다. 사용이 불가능한 것은 아니지만 되도록 하이픈(-) 사용을 권장합니다.<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://delf.com/what-is-rest-api</span><br></pre></td></tr></table></figure></p>
+<h3 id="자원에-대한-확장자를-명시하지-않는다"><a href="#자원에-대한-확장자를-명시하지-않는다" class="headerlink" title="자원에 대한 확장자를 명시하지 않는다."></a>자원에 대한 확장자를 명시하지 않는다.</h3><p>URI에 확장자를 표시하기 보다는 <code>Accept</code> header를 이용합니다.</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http://delf.com/cat.txt</span><br></pre></td></tr></table></figure>
+<p>위의 URI를 REST API로 구현한다면 다음과 같아집니다.<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">GET /cat HTTP/1.1</span><br><span class="line">Host: delf.com</span><br><span class="line">Accept: text/plain</span><br></pre></td></tr></table></figure></p>
+<p>또는, 다음같이 다른 형대로 요청할 수 있습니다.<br><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">GET /cat HTTP/1.1           </span><br><span class="line">Host: delf.com</span><br><span class="line">Accept: text/csv</span><br></pre></td></tr></table></figure></p>
+<p>이로써, 하나의 Resource에 대해서 하나의 URI에 대응할 수 있게되고, 클라이언트의 요청에 대한 응답을 좀더 유연하게 할 수 있습니다.</p>
+<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><ul>
+<li><a href="https://spoqa.github.io/2012/02/27/rest-introduction.html" target="_blank" rel="noopener">https://spoqa.github.io/2012/02/27/rest-introduction.html</a></li>
+<li><a href="https://meetup.toast.com/posts/92" target="_blank" rel="noopener">https://meetup.toast.com/posts/92</a></li>
+<li><a href="http://amazingguni.github.io/blog/2016/03/REST에-대한-이해-1" target="_blank" rel="noopener">http://amazingguni.github.io/blog/2016/03/REST에-대한-이해-1</a></li>
+<li><a href="http://blog.remotty.com/blog/2014/01/28/lets-study-rest/" target="_blank" rel="noopener">http://blog.remotty.com/blog/2014/01/28/lets-study-rest/</a></li>
+</ul>
+<h3 id="도움이-될만한-글"><a href="#도움이-될만한-글" class="headerlink" title="도움이 될만한 글"></a>도움이 될만한 글</h3><ul>
+<li><a href="https://blog.npcode.com/2017/04/03/rest의-representation이란-무엇인가/" target="_blank" rel="noopener">https://blog.npcode.com/2017/04/03/rest의-representation이란-무엇인가/</a></li>
+<li><a href="https://spoqa.github.io/2013/06/11/more-restful-interface.html" target="_blank" rel="noopener">https://spoqa.github.io/2013/06/11/more-restful-interface.html</a></li>
+</ul>
+</div><div class="tags"><a href="/tags/Web/">Web</a><a href="/tags/HTTP/">HTTP</a></div><div class="post-nav"><a class="next" href="/2018/10/04/connection-pool/">Databese Connection Pool</a></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><form class="search-form" action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="http://yoursite.com"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 카테고리</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Study/">Study</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 태그</i></div><div class="tagcloud"><a href="/tags/Cloud/" style="font-size: 15px;">Cloud</a> <a href="/tags/Java/" style="font-size: 15px;">Java</a> <a href="/tags/DB/" style="font-size: 15px;">DB</a> <a href="/tags/Interview/" style="font-size: 15px;">Interview</a> <a href="/tags/AWS/" style="font-size: 15px;">AWS</a> <a href="/tags/OOP/" style="font-size: 15px;">OOP</a> <a href="/tags/Web/" style="font-size: 15px;">Web</a> <a href="/tags/HTTP/" style="font-size: 15px;">HTTP</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 과거</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2018/10/09/restful/">RESTful과 REST API</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/10/04/connection-pool/">Databese Connection Pool</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/21/java-generic/">제네릭(Generic)이란?</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/18/why-cloud-computing/">Cloud Computing를 사용하는 이유</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/13/object-oriented/">객체지향(Object-Oriented)이란?</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/11/cloud-computing/">Cloud Computing이란?</a></li><li class="post-list-item"><a class="post-list-link" href="/2018/09/02/comparable-and-comparator/">Java의 Comparable과 Comparator</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 블로그롤</i></div><ul></ul><a href="http://www.example1.com/" title="site-name1" target="_blank">site-name1</a><ul></ul><a href="http://www.example2.com/" title="site-name2" target="_blank">site-name2</a><ul></ul><a href="http://www.example3.com/" title="site-name3" target="_blank">site-name3</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2018 <a href="/." rel="nofollow">Delf's blog.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.3.5/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.3.5/jquery.fancybox.min.css"><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
