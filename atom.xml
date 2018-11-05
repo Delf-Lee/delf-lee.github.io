@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Delf&#39;s blog</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://delf-lee.github.io/"/>
+  <updated>2018-11-02T19:37:20.550Z</updated>
+  <id>https://delf-lee.github.io/</id>
+  
+  <author>
+    <name>Delf</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>String vs StringBuilder vs StringBuffer</title>
+    <link href="https://delf-lee.github.io/post/string-stringbuilder-stringbuffer/"/>
+    <id>https://delf-lee.github.io/post/string-stringbuilder-stringbuffer/</id>
+    <published>2018-10-29T17:00:25.000Z</published>
+    <updated>2018-11-02T19:37:20.550Z</updated>
+    
+    <summary type="html">
+    
+      String과 StringBuilder, StringBuffer의 차이점을 알아봅니다.
+    
+    </summary>
+    
+      <category term="Study" scheme="https://delf-lee.github.io/categories/study/"/>
+    
+    
+      <category term="Java" scheme="https://delf-lee.github.io/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>RAID</title>
+    <link href="https://delf-lee.github.io/post/raid/"/>
+    <id>https://delf-lee.github.io/post/raid/</id>
+    <published>2018-10-11T03:41:01.000Z</published>
+    <updated>2018-10-19T16:20:17.862Z</updated>
+    
+    <summary type="html">
+    
+      RAID의 개념과 RAID 레벨 별로 장단점을 알아봅니다.
+    
+    </summary>
+    
+      <category term="Study" scheme="https://delf-lee.github.io/categories/study/"/>
+    
+    
+      <category term="OS" scheme="https://delf-lee.github.io/tags/os/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>RESTful과 REST API</title>
+    <link href="https://delf-lee.github.io/post/restful/"/>
+    <id>https://delf-lee.github.io/post/restful/</id>
+    <published>2018-10-08T18:46:41.000Z</published>
+    <updated>2018-10-19T16:20:17.862Z</updated>
+    
+    <summary type="html">
+    
+      REST의 의미와 RESTful이 무엇인지에 대하여 설명한다.
+    
+    </summary>
+    
+      <category term="Study" scheme="https://delf-lee.github.io/categories/study/"/>
+    
+    
+      <category term="Web" scheme="https://delf-lee.github.io/tags/web/"/>
+    
+      <category term="HTTP" scheme="https://delf-lee.github.io/tags/http/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Databese Connection Pool</title>
+    <link href="https://delf-lee.github.io/post/connection-pool/"/>
+    <id>https://delf-lee.github.io/post/connection-pool/</id>
+    <published>2018-10-04T03:04:44.000Z</published>
+    <updated>2018-10-19T16:20:17.862Z</updated>
+    
+    <summary type="html">
+    
+      Databese Connection Pool에 대한 개념을 이해한다.
+    
+    </summary>
+    
+      <category term="Study" scheme="https://delf-lee.github.io/categories/study/"/>
+    
+    
+      <category term="DB" scheme="https://delf-lee.github.io/tags/db/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>제네릭(Generic)이란?</title>
+    <link href="https://delf-lee.github.io/post/java-generic/"/>
+    <id>https://delf-lee.github.io/post/java-generic/</id>
+    <published>2018-09-21T06:13:14.000Z</published>
+    <updated>2018-10-19T16:20:17.861Z</updated>
+    
+    <summary type="html">
+    
+      제네릭(Generic)의 사용방법과 예제
+    
+    </summary>
+    
+      <category term="Study" scheme="https://delf-lee.github.io/categories/study/"/>
+    
+    
+      <category term="Java" scheme="https://delf-lee.github.io/tags/java/"/>
+    
+      <category term="Interview" scheme="https://delf-lee.github.io/tags/interview/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Cloud Computing를 사용하는 이유</title>
+    <link href="https://delf-lee.github.io/post/why-cloud-computing/"/>
+    <id>https://delf-lee.github.io/post/why-cloud-computing/</id>
+    <published>2018-09-18T05:22:13.000Z</published>
+    <updated>2018-10-19T16:20:17.862Z</updated>
+    
+    <summary type="html">
+    
+      AWS가 말하는 Cloud Computing의 이점에 대해서
+    
+    </summary>
+    
+      <category term="Study" scheme="https://delf-lee.github.io/categories/study/"/>
+    
+    
+      <category term="Cloud" scheme="https://delf-lee.github.io/tags/cloud/"/>
+    
+      <category term="Interview" scheme="https://delf-lee.github.io/tags/interview/"/>
+    
+      <category term="AWS" scheme="https://delf-lee.github.io/tags/aws/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>객체지향(Object-Oriented)이란?</title>
+    <link href="https://delf-lee.github.io/post/object-oriented/"/>
+    <id>https://delf-lee.github.io/post/object-oriented/</id>
+    <published>2018-09-13T10:49:41.000Z</published>
+    <updated>2018-10-19T16:20:17.862Z</updated>
+    
+    <summary type="html">
+    
+      객체지향에 대한 전반적인 개념
+    
+    </summary>
+    
+      <category term="Study" scheme="https://delf-lee.github.io/categories/study/"/>
+    
+    
+      <category term="Interview" scheme="https://delf-lee.github.io/tags/interview/"/>
+    
+      <category term="OOP" scheme="https://delf-lee.github.io/tags/oop/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Cloud Computing이란?</title>
+    <link href="https://delf-lee.github.io/post/cloud-computing/"/>
+    <id>https://delf-lee.github.io/post/cloud-computing/</id>
+    <published>2018-09-11T08:26:12.000Z</published>
+    <updated>2018-10-19T16:20:17.861Z</updated>
+    
+    <summary type="html">
+    
+      클라우드 컴퓨팅에 대한 소개
+    
+    </summary>
+    
+      <category term="Study" scheme="https://delf-lee.github.io/categories/study/"/>
+    
+    
+      <category term="Cloud" scheme="https://delf-lee.github.io/tags/cloud/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Java의 Comparable과 Comparator</title>
+    <link href="https://delf-lee.github.io/post/comparable-and-comparator/"/>
+    <id>https://delf-lee.github.io/post/comparable-and-comparator/</id>
+    <published>2018-09-02T13:36:05.000Z</published>
+    <updated>2018-10-19T16:20:17.862Z</updated>
+    
+    <summary type="html">
+    
+      Java에서 임의의 객체를 담은 배열을 정렬하기 위해 Comparable과 Comparator의 사용 방법에 대해서 알아봅니다.
+    
+    </summary>
+    
+    
+      <category term="Java" scheme="https://delf-lee.github.io/tags/java/"/>
+    
+  </entry>
+  
+</feed>
