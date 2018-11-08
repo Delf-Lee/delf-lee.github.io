@@ -24,14 +24,6 @@
     </url>
 
     <url>
-        <loc>https://delf-lee.github.io/post/object-oriented/</loc>
-        <lastmod>2018-10-19T16:20:17.862Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
         <loc>https://delf-lee.github.io/post/comparable-and-comparator/</loc>
         <lastmod>2018-10-19T16:20:17.862Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -40,7 +32,15 @@
     </url>
 
     <url>
-        <loc>https://delf-lee.github.io/post/raid/</loc>
+        <loc>https://delf-lee.github.io/post/object-oriented/</loc>
+        <lastmod>2018-10-19T16:20:17.862Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
+        <loc>https://delf-lee.github.io/post/why-cloud-computing/</loc>
         <lastmod>2018-10-19T16:20:17.862Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
@@ -56,7 +56,7 @@
     </url>
 
     <url>
-        <loc>https://delf-lee.github.io/post/why-cloud-computing/</loc>
+        <loc>https://delf-lee.github.io/post/raid/</loc>
         <lastmod>2018-10-19T16:20:17.862Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
