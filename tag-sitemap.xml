@@ -3,13 +3,6 @@
 
 
     <url>
-        <loc>https://delf-lee.github.io/tags/db/</loc>
-        <lastmod>2018-10-19T16:20:17.862Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://delf-lee.github.io/tags/cloud/</loc>
         <lastmod>2018-10-19T16:20:17.862Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -17,7 +10,7 @@
     </url>
 
     <url>
-        <loc>https://delf-lee.github.io/tags/oop/</loc>
+        <loc>https://delf-lee.github.io/tags/db/</loc>
         <lastmod>2018-10-19T16:20:17.862Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -45,6 +38,13 @@
     </url>
 
     <url>
+        <loc>https://delf-lee.github.io/tags/oop/</loc>
+        <lastmod>2018-10-19T16:20:17.862Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://delf-lee.github.io/tags/aws/</loc>
         <lastmod>2018-10-19T16:20:17.862Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -60,14 +60,14 @@
 
     <url>
         <loc>https://delf-lee.github.io/tags/web/</loc>
-        <lastmod>2018-11-11T07:36:24.680Z</lastmod>
+        <lastmod>2018-11-11T07:38:06.994Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://delf-lee.github.io/tags/oauth/</loc>
-        <lastmod>2018-11-11T07:36:24.680Z</lastmod>
+        <lastmod>2018-11-11T07:38:06.994Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
