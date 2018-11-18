@@ -40,6 +40,14 @@
     </url>
 
     <url>
+        <loc>https://delf-lee.github.io/post/object-oriented/</loc>
+        <lastmod>2018-10-19T16:20:17.862Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.6</priority>
+
+    </url>
+
+    <url>
         <loc>https://delf-lee.github.io/post/raid/</loc>
         <lastmod>2018-10-19T16:20:17.862Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -49,14 +57,6 @@
 
     <url>
         <loc>https://delf-lee.github.io/post/restful/</loc>
-        <lastmod>2018-10-19T16:20:17.862Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.6</priority>
-
-    </url>
-
-    <url>
-        <loc>https://delf-lee.github.io/post/object-oriented/</loc>
         <lastmod>2018-10-19T16:20:17.862Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.6</priority>
