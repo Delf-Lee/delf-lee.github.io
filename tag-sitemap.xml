@@ -3,7 +3,7 @@
 
 
     <url>
-        <loc>https://delf-lee.github.io/tags/cloud/</loc>
+        <loc>https://delf-lee.github.io/tags/interview/</loc>
         <lastmod>2018-10-19T16:20:17.862Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -17,14 +17,7 @@
     </url>
 
     <url>
-        <loc>https://delf-lee.github.io/tags/interview/</loc>
-        <lastmod>2018-10-19T16:20:17.862Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://delf-lee.github.io/tags/oop/</loc>
+        <loc>https://delf-lee.github.io/tags/cloud/</loc>
         <lastmod>2018-10-19T16:20:17.862Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -38,7 +31,7 @@
     </url>
 
     <url>
-        <loc>https://delf-lee.github.io/tags/http/</loc>
+        <loc>https://delf-lee.github.io/tags/oop/</loc>
         <lastmod>2018-10-19T16:20:17.862Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -46,6 +39,13 @@
 
     <url>
         <loc>https://delf-lee.github.io/tags/aws/</loc>
+        <lastmod>2018-10-19T16:20:17.862Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://delf-lee.github.io/tags/http/</loc>
         <lastmod>2018-10-19T16:20:17.862Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -74,35 +74,35 @@
 
     <url>
         <loc>https://delf-lee.github.io/tags/interllj/</loc>
-        <lastmod>2018-11-24T14:52:50.778Z</lastmod>
+        <lastmod>2018-11-24T15:39:18.158Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://delf-lee.github.io/tags/spring/</loc>
-        <lastmod>2018-11-24T14:52:50.778Z</lastmod>
+        <lastmod>2018-11-24T15:39:18.158Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://delf-lee.github.io/tags/springmvc/</loc>
-        <lastmod>2018-11-24T14:52:50.778Z</lastmod>
+        <lastmod>2018-11-24T15:39:18.158Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://delf-lee.github.io/tags/gradle/</loc>
-        <lastmod>2018-11-24T14:52:50.778Z</lastmod>
+        <lastmod>2018-11-24T15:39:18.158Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
 
     <url>
         <loc>https://delf-lee.github.io/tags/tomcat/</loc>
-        <lastmod>2018-11-24T14:52:50.778Z</lastmod>
+        <lastmod>2018-11-24T15:39:18.158Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>
