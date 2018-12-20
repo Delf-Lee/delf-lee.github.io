@@ -1,0 +1,81 @@
+<!DOCTYPE html><html lang="ko"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description"><title>detached entity passed to persist 에러 | Delf's blog</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/8.0.0/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/1.0.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create','UA-125726661-1','auto');ga('send','pageview');
+</script></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">detached entity passed to persist 에러</h1><a id="logo" href="/.">Delf's blog</a><p class="description"></p></div><div id="nav-menu"><a class="current" href="/."><i class="fa fa-home"> 홈</i></a><a href="/archives/"><i class="fa fa-archive"> 아카이브</i></a><a href="/about/"><i class="fa fa-user"> 소개</i></a><a href="/atom.xml"><i class="fa fa-rss"> RSS</i></a></div></div><div class="pure-g" id="layout"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">detached entity passed to persist 에러</h1><div class="post-meta">Dec 20, 2018<span> | </span><span class="category"><a href="/categories/project/">Project</a></span></div><a class="disqus-comment-count" data-disqus-identifier="post/detached-entity-passed-to-persist-error/" href="/post/detached-entity-passed-to-persist-error/#disqus_thread"></a><div class="post-content"><h2 id="경위"><a href="#경위" class="headerlink" title="경위"></a>경위</h2><p><code>JpaRepository</code>를 이용하여 ManyToOne 관계에 있는 두 도메인에 대한 클래스를 생성하고 DB에 저장하는 테스트를 실행했습니다. </p>
+<h2 id="증상"><a href="#증상" class="headerlink" title="증상"></a>증상</h2><p>아래와 같은 문구를 띄우며 테스트 실패했습니다.<br>같은 객체(부모)를 참조하고 있는 서로 다른 두 개의 객체(자식)를 save(persist)하는 부분에서 에러가 발생했네요.<br><figure class="highlight console"><table><tr><td class="code"><pre><span class="line">org.springframework.dao.InvalidDataAccessApiUsageException: detached entity passed to persist: [package path]; nested exception is org.hibernate.PersistentObjectException: detached entity passed to persist: [package path]</span><br></pre></td></tr></table></figure></p>
+<p><img src="/post_resources/2018-12-20/title.png" alt=""></p>
+<h2 id="원인"><a href="#원인" class="headerlink" title="원인"></a>원인</h2><blockquote>
+<p><code>@ManyToOne</code>의 <code>CascdeType</code>옵션을 <code>ALL</code>로 부여해서 발생한 문제였습니다.</p>
+</blockquote>
+<h3 id="영속성-전이-cascade"><a href="#영속성-전이-cascade" class="headerlink" title="영속성 전이 - cascade"></a>영속성 전이 - <code>cascade</code></h3><p>특정 엔티티를 영속 상태로 만들 때, 연관된 엔티티도 함께 영속 상태로 만들고 싶다면 <code>cascade</code>를 이용한 영속성 전이 기능을 사용하면 됩니다. JPA의 <code>cascade</code>옵션으로 영속성 전이를 제공합니다.</p>
+<p>쉽게 말해서 영속성 전이를 사용하면 부모 엔티티를 저장할 때 자식 엔티티도 함께 저장할 수 있습니다.</p>
+<h3 id="CascadeType의-종류"><a href="#CascadeType의-종류" class="headerlink" title="CascadeType의 종류"></a>CascadeType의 종류</h3><ul>
+<li><code>CascadeType.RESIST</code>: 엔티티를 생성하고, 연관 엔티티를 추가하였을 때 persist() 를 수행하면 연관 엔티티도 함께 persist()가 수행된다. 만약 연관 엔티티가 DB에 등록된 키값을 가지고 있다면 detached entity passed to persist Exception이 발생한다.</li>
+<li><code>CascadeType.MERGE</code>: 트랜잭션이 종료되고 detach 상태에서 연관 엔티티를 추가하거나 변경된 이후에 부모 엔티티가 merge()를  수행하게 되면 변경사항이 적용된다.(연관 엔티티의 추가 및 수정 모두 반영됨)</li>
+<li><code>CascadeType.REMOVE</code>: 삭제 시 연관된 엔티티도 같이 삭제됨</li>
+<li><code>CascadeType.DETACH</code>: 부모 엔티티가 detach()를 수행하게 되면, 연관된 엔티티도 detach() 상태가 되어 변경사항이 반영되지  않는다.</li>
+<li><code>CascadeType.ALL</code>: 모든 Cascade 적용</li>
+</ul>
+<h3 id="JPA-Life-cycle"><a href="#JPA-Life-cycle" class="headerlink" title="JPA Life cycle"></a>JPA Life cycle</h3><p><code>CascadeType.ALL</code>옵션을 주었기 때문에, 처음 <code>save()</code>했을 때 자식 객체에서 참조하고 있는 부모객체가 <code>detached</code>되었고, 다시 <code>persist</code>가 불가능 했기에 에러가 발생했습니다.</p>
+<p><img src="/post_resources/2018-12-20/entity_lifecycle.png" alt=""></p>
+<h2 id="해결법"><a href="#해결법" class="headerlink" title="해결법"></a>해결법</h2><p><code>casecade</code> 옵션을 <code>MERGED</code> 혹은 <code>DETACH</code>변경하거나 삭제합니다.<br><figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="meta">@ManyToOne</span> <span class="comment">/*(cascade = CascadeType.ALL)*/</span></span><br><span class="line"><span class="meta">@ManyToOne</span> (cascade = CascadeType.MERGED)</span><br><span class="line"><span class="meta">@ManyToOne</span> (cascade = CascadeType.DETACH)</span><br></pre></td></tr></table></figure></p>
+<h3 id="References"><a href="#References" class="headerlink" title="References"></a>References</h3><ul>
+<li><a href="http://blog.woniper.net/266" target="_blank" rel="noopener">영속성 전이 CASCADE - 머루의 개발 블로그</a></li>
+<li><a href="http://wonwoo.ml/index.php/post/1002" target="_blank" rel="noopener">JPA 영속성 - 머루의 개발 블로그</a></li>
+<li><a href="chomman.github.io/blog/java/jpa/programming/jpa-cascadetype-종류/">JPA CascadeType 종류 - Taehyun Jung</a></li>
+<li><a href="https://m.blog.naver.com/PostView.nhn?blogId=sim4858&amp;logNo=220998440706&amp;proxyReferer=https%3A%2F%2Fwww.google.co.kr%2F" target="_blank" rel="noopener">[DB] detached entity passed to persist 에러 간단 해결하기 - PrinceY’s blog</a></li>
+</ul>
+</div><div class="tags"><a href="/tags/spring/">Spring</a><a href="/tags/hibernate/">Hibernate</a><a href="/tags/jpa/">JPA</a><a href="/tags/error/">Error</a><a href="/tags/db/">DB</a></div><div class="post-nav"><a class="next" href="/post/start-intellij-gradle-springmvc-project/">IntelliJ에서 gradle을 이용하여 Spring MVC 프로젝트 만들기</a></div><div id="disqus_thread"><div class="btn_click_load"><button class="disqus_click_btn">阅读评论（请确保 Disqus 可以正常加载）</button></div><script type="text/javascript">var disqus_config = function () {
+    this.page.url = 'https://delf-lee.github.io/post/detached-entity-passed-to-persist-error/';
+    this.page.identifier = 'post/detached-entity-passed-to-persist-error/';
+    this.page.title = 'detached entity passed to persist 에러';
+  };</script><script type="text/javascript" id="disqus-lazy-load-script">$.ajax({
+url: 'https://disqus.com/next/config.json',
+timeout: 2500,
+type: 'GET',
+success: function(){
+  var d = document;
+  var s = d.createElement('script');
+  s.src = '//delfs-blog.disqus.com/embed.js';
+  s.setAttribute('data-timestamp', + new Date());
+  (d.head || d.body).appendChild(s);
+  $('.disqus_click_btn').css('display', 'none');
+},
+error: function() {
+  $('.disqus_click_btn').css('display', 'block');
+}
+});</script><script type="text/javascript" id="disqus-click-load">$('.btn_click_load').click(() => {  //click to load comments
+    (() => { // DON'T EDIT BELOW THIS LINE
+        var d = document;
+        var s = d.createElement('script');
+        s.src = '//delfs-blog.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', + new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+    $('.disqus_click_btn').css('display','none');
+});</script><script type="text/javascript" id="disqus-count-script">$(function() {
+     var xhr = new XMLHttpRequest();
+     xhr.open('GET', '//disqus.com/next/config.json', true);
+     xhr.timeout = 2500;
+     xhr.onreadystatechange = function () {
+       if (xhr.readyState === 4 && xhr.status === 200) {
+         $('.post-meta .post-comments-count').show();
+         var s = document.createElement('script');
+         s.id = 'dsq-count-scr';
+         s.src = 'https://delfs-blog.disqus.com/count.js';
+         s.async = true;
+         (document.head || document.body).appendChild(s);
+       }
+     };
+     xhr.ontimeout = function () { xhr.abort(); };
+     xhr.send(null);
+   });
+</script></div></div></div></div><div class="pure-u-1-4 hidden_mid_and_down"><div id="sidebar"><div class="widget"><div class="search-form"><input id="local-search-input" placeholder="Search" type="text" name="q" results="0"/><div id="local-search-result"></div></div></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> 카테고리</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/project/">Project</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/study/">Study</a><span class="category-list-count">10</span></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> 태그</i></div><div class="tagcloud"><a href="/tags/interview/" style="font-size: 15px;">Interview</a> <a href="/tags/spring/" style="font-size: 15px;">Spring</a> <a href="/tags/jpa/" style="font-size: 15px;">JPA</a> <a href="/tags/error/" style="font-size: 15px;">Error</a> <a href="/tags/db/" style="font-size: 15px;">DB</a> <a href="/tags/java/" style="font-size: 15px;">Java</a> <a href="/tags/cloud/" style="font-size: 15px;">Cloud</a> <a href="/tags/web/" style="font-size: 15px;">Web</a> <a href="/tags/oauth/" style="font-size: 15px;">Oauth</a> <a href="/tags/hibernate/" style="font-size: 15px;">Hibernate</a> <a href="/tags/oop/" style="font-size: 15px;">OOP</a> <a href="/tags/interllj/" style="font-size: 15px;">InterllJ</a> <a href="/tags/springmvc/" style="font-size: 15px;">SpringMVC</a> <a href="/tags/gradle/" style="font-size: 15px;">Gradle</a> <a href="/tags/tomcat/" style="font-size: 15px;">Tomcat</a> <a href="/tags/os/" style="font-size: 15px;">OS</a> <a href="/tags/http/" style="font-size: 15px;">HTTP</a> <a href="/tags/aws/" style="font-size: 15px;">AWS</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> 과거</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/post/detached-entity-passed-to-persist-error/">detached entity passed to persist 에러</a></li><li class="post-list-item"><a class="post-list-link" href="/post/start-intellij-gradle-springmvc-project/">IntelliJ에서 gradle을 이용하여 Spring MVC 프로젝트 만들기</a></li><li class="post-list-item"><a class="post-list-link" href="/post/oauth-sample-facebook/">Facebook에서 OAuth 구현해보기</a></li><li class="post-list-item"><a class="post-list-link" href="/post/string-stringbuilder-stringbuffer/">String vs StringBuilder vs StringBuffer</a></li><li class="post-list-item"><a class="post-list-link" href="/post/raid/">RAID</a></li><li class="post-list-item"><a class="post-list-link" href="/post/restful/">RESTful과 REST API</a></li><li class="post-list-item"><a class="post-list-link" href="/post/connection-pool/">Databese Connection Pool</a></li><li class="post-list-item"><a class="post-list-link" href="/post/java-generic/">제네릭(Generic)이란?</a></li><li class="post-list-item"><a class="post-list-link" href="/post/why-cloud-computing/">Cloud Computing를 사용하는 이유</a></li><li class="post-list-item"><a class="post-list-link" href="/post/object-oriented/">객체지향(Object-Oriented)이란?</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-comment-o"> 최근 댓글</i></div><script type="text/javascript" src="//delfs-blog.disqus.com/recent_comments_widget.js?num_items=5&amp;hide_avatars=1&amp;avatar_size=32&amp;excerpt_length=20&amp;hide_mods=1"></script></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> 블로그롤</i></div><ul></ul><a href="https://github.com/Delf-Lee" title="Github" target="_blank">Github</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">Copyright © 2018 <a href="/." rel="nofollow">Delf's blog.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a class="show" id="rocket" href="#top"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/3.3.5/jquery.fancybox.min.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/fancybox/3.3.5/jquery.fancybox.min.css"><script type="text/javascript" src="/js/search.js?v=0.0.0"></script><script>var search_path = 'sheearch.xml';
+if (search_path.length == 0) {
+   search_path = 'search.xml';
+}
+var path = '/' + search_path;
+searchFunc(path, 'local-search-input', 'local-search-result');
+</script><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>

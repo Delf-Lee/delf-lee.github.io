@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://delf-lee.github.io/"/>
-  <updated>2018-11-24T20:00:30.545Z</updated>
+  <updated>2018-12-20T14:52:18.506Z</updated>
   <id>https://delf-lee.github.io/</id>
   
   <author>
@@ -17,11 +17,39 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>detached entity passed to persist 에러</title>
+    <link href="https://delf-lee.github.io/post/detached-entity-passed-to-persist-error/"/>
+    <id>https://delf-lee.github.io/post/detached-entity-passed-to-persist-error/</id>
+    <published>2018-12-20T02:12:00.000Z</published>
+    <updated>2018-12-20T14:52:18.506Z</updated>
+    
+    <summary type="html">
+    
+      Hibernate를 이용한 프로젝트 중 겪은 에러
+    
+    </summary>
+    
+      <category term="Project" scheme="https://delf-lee.github.io/categories/project/"/>
+    
+    
+      <category term="Spring" scheme="https://delf-lee.github.io/tags/spring/"/>
+    
+      <category term="Hibernate" scheme="https://delf-lee.github.io/tags/hibernate/"/>
+    
+      <category term="JPA" scheme="https://delf-lee.github.io/tags/jpa/"/>
+    
+      <category term="Error" scheme="https://delf-lee.github.io/tags/error/"/>
+    
+      <category term="DB" scheme="https://delf-lee.github.io/tags/db/"/>
+    
+  </entry>
+  
+  <entry>
     <title>IntelliJ에서 gradle을 이용하여 Spring MVC 프로젝트 만들기</title>
     <link href="https://delf-lee.github.io/post/start-intellij-gradle-springmvc-project/"/>
     <id>https://delf-lee.github.io/post/start-intellij-gradle-springmvc-project/</id>
     <published>2018-11-24T02:52:50.000Z</published>
-    <updated>2018-11-24T20:00:30.545Z</updated>
+    <updated>2018-11-27T06:08:53.365Z</updated>
     
     <summary type="html">
     
@@ -32,9 +60,9 @@
       <category term="Study" scheme="https://delf-lee.github.io/categories/study/"/>
     
     
-      <category term="InterllJ" scheme="https://delf-lee.github.io/tags/interllj/"/>
-    
       <category term="Spring" scheme="https://delf-lee.github.io/tags/spring/"/>
+    
+      <category term="InterllJ" scheme="https://delf-lee.github.io/tags/interllj/"/>
     
       <category term="SpringMVC" scheme="https://delf-lee.github.io/tags/springmvc/"/>
     
