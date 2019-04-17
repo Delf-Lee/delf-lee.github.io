@@ -32,6 +32,8 @@
       <category term="Project" scheme="https://delf-lee.github.io/categories/project/"/>
     
     
+      <category term="DB" scheme="https://delf-lee.github.io/tags/db/"/>
+    
       <category term="Spring" scheme="https://delf-lee.github.io/tags/spring/"/>
     
       <category term="Hibernate" scheme="https://delf-lee.github.io/tags/hibernate/"/>
@@ -39,8 +41,6 @@
       <category term="JPA" scheme="https://delf-lee.github.io/tags/jpa/"/>
     
       <category term="Error" scheme="https://delf-lee.github.io/tags/error/"/>
-    
-      <category term="DB" scheme="https://delf-lee.github.io/tags/db/"/>
     
   </entry>
   

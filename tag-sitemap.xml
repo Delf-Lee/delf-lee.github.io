@@ -17,7 +17,7 @@
     </url>
 
     <url>
-        <loc>https://delf-lee.github.io/tags/oop/</loc>
+        <loc>https://delf-lee.github.io/tags/http/</loc>
         <lastmod>2018-10-19T16:20:17.862Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -31,7 +31,7 @@
     </url>
 
     <url>
-        <loc>https://delf-lee.github.io/tags/http/</loc>
+        <loc>https://delf-lee.github.io/tags/oop/</loc>
         <lastmod>2018-10-19T16:20:17.862Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -94,6 +94,13 @@
     </url>
 
     <url>
+        <loc>https://delf-lee.github.io/tags/db/</loc>
+        <lastmod>2018-12-20T14:52:18.506Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
         <loc>https://delf-lee.github.io/tags/spring/</loc>
         <lastmod>2018-12-20T14:52:18.506Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -116,13 +123,6 @@
 
     <url>
         <loc>https://delf-lee.github.io/tags/error/</loc>
-        <lastmod>2018-12-20T14:52:18.506Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
-        <loc>https://delf-lee.github.io/tags/db/</loc>
         <lastmod>2018-12-20T14:52:18.506Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
