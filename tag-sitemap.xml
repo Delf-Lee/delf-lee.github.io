@@ -3,7 +3,7 @@
 
 
     <url>
-        <loc>https://delf-lee.github.io/tags/cloud/</loc>
+        <loc>https://delf-lee.github.io/tags/oop/</loc>
         <lastmod>2018-10-19T16:20:17.862Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -17,13 +17,6 @@
     </url>
 
     <url>
-        <loc>https://delf-lee.github.io/tags/http/</loc>
-        <lastmod>2018-10-19T16:20:17.862Z</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.2</priority>
-    </url>
-
-    <url>
         <loc>https://delf-lee.github.io/tags/os/</loc>
         <lastmod>2018-10-19T16:20:17.862Z</lastmod>
         <changefreq>weekly</changefreq>
@@ -31,7 +24,7 @@
     </url>
 
     <url>
-        <loc>https://delf-lee.github.io/tags/oop/</loc>
+        <loc>https://delf-lee.github.io/tags/http/</loc>
         <lastmod>2018-10-19T16:20:17.862Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
@@ -124,6 +117,27 @@
     <url>
         <loc>https://delf-lee.github.io/tags/error/</loc>
         <lastmod>2018-12-20T14:52:18.506Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://delf-lee.github.io/tags/review/</loc>
+        <lastmod>2019-04-17T13:54:23.805Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://delf-lee.github.io/tags/woowahan/</loc>
+        <lastmod>2019-04-17T13:54:23.805Z</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.2</priority>
+    </url>
+
+    <url>
+        <loc>https://delf-lee.github.io/tags/cloud/</loc>
+        <lastmod>2019-05-17T14:39:22.721Z</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.2</priority>
     </url>

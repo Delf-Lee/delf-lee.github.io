@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://delf-lee.github.io/"/>
-  <updated>2018-12-20T14:52:18.506Z</updated>
+  <updated>2019-05-17T14:39:22.721Z</updated>
   <id>https://delf-lee.github.io/</id>
   
   <author>
@@ -15,6 +15,48 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>fail-fast</title>
+    <link href="https://delf-lee.github.io/post/fail-fast/"/>
+    <id>https://delf-lee.github.io/post/fail-fast/</id>
+    <published>2019-05-15T13:53:01.000Z</published>
+    <updated>2019-05-17T14:39:22.721Z</updated>
+    
+    <summary type="html">
+    
+      Java의 iterator와 fail-fas에 대하여
+    
+    </summary>
+    
+      <category term="Java" scheme="https://delf-lee.github.io/categories/java/"/>
+    
+    
+      <category term="Cloud" scheme="https://delf-lee.github.io/tags/cloud/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>우아한테크코스 선발 과정 진행 후기</title>
+    <link href="https://delf-lee.github.io/post/woowacourse-process-review/"/>
+    <id>https://delf-lee.github.io/post/woowacourse-process-review/</id>
+    <published>2019-04-16T02:22:59.000Z</published>
+    <updated>2019-04-17T13:54:23.805Z</updated>
+    
+    <summary type="html">
+    
+      우아한형제들에서 오픈한 우아한테크코스 선발 과정을 진행하면서 느낀점과 후기를 기록합니다.
+    
+    </summary>
+    
+      <category term="Review" scheme="https://delf-lee.github.io/categories/review/"/>
+    
+    
+      <category term="review" scheme="https://delf-lee.github.io/tags/review/"/>
+    
+      <category term="woowahan" scheme="https://delf-lee.github.io/tags/woowahan/"/>
+    
+  </entry>
   
   <entry>
     <title>detached entity passed to persist 에러</title>
@@ -238,9 +280,9 @@
       <category term="Study" scheme="https://delf-lee.github.io/categories/study/"/>
     
     
-      <category term="Interview" scheme="https://delf-lee.github.io/tags/interview/"/>
-    
       <category term="OOP" scheme="https://delf-lee.github.io/tags/oop/"/>
+    
+      <category term="Interview" scheme="https://delf-lee.github.io/tags/interview/"/>
     
   </entry>
   
